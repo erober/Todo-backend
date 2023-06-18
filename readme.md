@@ -1,3 +1,7 @@
+The backend is hosted on Vercel:
+
+https://todo-backend-plum.vercel.app/
+
 To run the application on local server clone it first and then run these commands
 
 npm install
