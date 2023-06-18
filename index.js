@@ -1,11 +1,13 @@
 const express = require('express')
 const parser=require('body-parser');
 const mongoose= require('mongoose');
+require("dotenv").config()
 
 // Initialize the app
 const app = express();
-
-mongoose.connect("mongodb+srv://gabbar329:<password>@cluster0.qlr2voe.mongodb.net/toDo?retryWrites=true&w=majority")
+const user = process.env.mongoDBuser
+const pass = process.env.mongoDbpass
+mongoose.connect("mongodb+srv://cluster0.qlr2voe.mongodb.net/toDo?retryWrites=true&w=majority", { user: user, pass: pass, useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(parser.json());
 app.use(parser.urlencoded({extended:true}));
